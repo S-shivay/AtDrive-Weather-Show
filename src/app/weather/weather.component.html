@@ -1,0 +1,28 @@
+<div class="weather-container">
+    <h2>Weather Information</h2>
+  
+   
+    <div class="input-group">
+      <label for="lat">Latitude:</label>
+      <input type="number" [(ngModel)]="lat" id="lat" placeholder="Enter latitude">
+    </div>
+  
+   
+    <div class="input-group">
+      <label for="lon">Longitude:</label>
+      <input type="number" [(ngModel)]="lon" id="lon" placeholder="Enter longitude">
+    </div>
+  
+   
+    <button class="get-weather-btn" (click)="getWeather()">Get Weather</button>
+  
+   
+    <div class="weather-info" *ngIf="weatherData">
+      <h3>Location: Latitude: {{ lat }}, Longitude: {{ lon }}</h3>
+      <p>Temperature: {{ weatherData.temperature }} &#8451;</p>
+      <p>Wind Speed: {{ weatherData.windSpeed }} m/s</p>
+      <p>Humidity: {{ weatherData.humidity }}%</p>
+      <p>Pressure: {{ weatherData.pressure }} hPa</p>
+    </div>
+  </div>
+  
